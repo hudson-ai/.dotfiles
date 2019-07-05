@@ -120,8 +120,6 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
-export PYTHONPATH="${PYTHONPATH}:/home/hudson/repos/alphatrai:/home/hudson/repos"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PYTHONPATH=$PYTHONPATH:$HOME/repos/
 
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
