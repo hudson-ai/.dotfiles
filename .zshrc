@@ -46,6 +46,8 @@ ZSH_THEME="custom" #"agnoster"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+ZSH_DISABLE_COMPFIX=true
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -103,23 +105,44 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-# added by Anaconda3 2018.12 installer
-# >>> conda init >>>
+HOSTNAME="$(hostname)"  # Conda clobbers HOST, so we save the real hostname into another variable.
+
+precmd() {
+    OLDHOST="${HOST}"
+    HOST="${HOSTNAME}"
+}
+
+preexec() {
+    HOST="${OLDHOST}"
+}
+
+export KIBOT=$HOME/repos/data/kibot
+export PATH="/Users/hudson/repos/alpha/bin:$PATH"
+
+alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
+export PATH="/usr/local/sbin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hudson/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hudson/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/hudson/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hudson/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$('/Users/hudson/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
+    eval "$__conda_setup"
 else
-    if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
+    if [ -f "/Users/hudson/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/hudson/miniconda3/etc/profile.d/conda.sh"
     else
-        \export PATH="/anaconda3/bin:$PATH"
+        export PATH="/Users/hudson/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda init <<<
+# <<< conda initialize <<<
 
-export PYTHONPATH=$PYTHONPATH:$HOME/repos/
+export PYTHONPATH=/Users/hudson/repos
+conda activate alpha
 
-alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
