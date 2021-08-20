@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -116,12 +118,6 @@ preexec() {
     HOST="${OLDHOST}"
 }
 
-export KIBOT=$HOME/repos/data/kibot
-export PATH="/Users/hudson/repos/alpha/bin:$PATH"
-
-alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
-export PATH="/usr/local/sbin:$PATH"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hudson/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hudson/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -143,6 +139,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/Users/hudson/repos/alpha/bin:$PATH"
+export ALPHADATA=$HOME/repos/data
+export KIBOT=$ALPHADATA/kibot
 export PYTHONPATH=/Users/hudson/repos
+
+# should do 'conda config --set auto_activate_base false' so we don't activate more than once (slow)
 conda activate alpha
 
+alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
+export PATH="/usr/local/sbin:$PATH"
