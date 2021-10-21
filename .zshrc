@@ -126,14 +126,14 @@ if [ -f '/Users/hudson/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/hudson/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/hudson/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/hudson/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/hudson/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/hudson/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/hudson/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/hudson/miniconda3/bin:$PATH"
+        export PATH="/home/hudson/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -142,7 +142,7 @@ unset __conda_setup
 export PATH="/Users/hudson/repos/alpha/bin:$PATH"
 export ALPHADATA=$HOME/repos/data
 export KIBOT=$ALPHADATA/kibot
-export PYTHONPATH=/Users/hudson/repos
+export PYTHONPATH=$HOME/repos
 
 # should do 'conda config --set auto_activate_base false' so we don't activate more than once (slow)
 conda activate alpha
