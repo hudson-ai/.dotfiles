@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="custom" #"agnoster"
+ZSH_THEME="custom"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -144,8 +144,14 @@ export ALPHADATA=$HOME/repos/data
 export KIBOT=$ALPHADATA/kibot
 export PYTHONPATH=$HOME/repos
 
+export DW_HOME=/Users/hudson/repos/data_warehouse
+export PYTHONPATH="$PYTHONPATH:${DW_HOME}/include"
+
 # should do 'conda config --set auto_activate_base false' so we don't activate more than once (slow)
 conda activate alpha
 
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
-export PATH="/usr/local/sbin:$PATH"
+
+export PATH="$HOME/bin:/usr/local/sbin:$PATH"
+
+alias pyrc="vim $HOME/.ipython/profile_default/startup/pyrc.py"
