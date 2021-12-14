@@ -1,0 +1,10 @@
+#! /bin/bash
+
+python $@ << EOF
+import sys
+import pickle
+for path in sys.argv[1:]:
+    d = pickle.load(open(path, 'rb')
+    s = d['meta_weights'] 
+    print(s.to_dict())
+EOF
