@@ -126,20 +126,20 @@ if [ -f '/Users/hudson/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/hudson/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/hudson/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/hudson/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/hudson/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/Users/hudson/repos/alpha/bin:$PATH"
+export PATH="$HOME/repos/alpha/bin:$PATH"
 export ALPHADATA=$HOME/repos/data
 export KIBOT=$ALPHADATA/kibot
 export PYTHONPATH=$HOME/repos
