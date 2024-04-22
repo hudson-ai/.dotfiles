@@ -13,7 +13,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 # Plugins
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Env variables and aliases
 export SSH_KEY_PATH="~/.ssh/rsa_id"
