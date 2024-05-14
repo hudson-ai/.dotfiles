@@ -22,6 +22,8 @@ export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+alias grep="grep --color=auto"
+
 if command -v nvim &> /dev/null; then
   alias vim=nvim
 fi
@@ -44,3 +46,9 @@ fi
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
