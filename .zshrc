@@ -87,27 +87,12 @@ fi
 
 
 # Shell hooks
-
-# Conda
-conda_path=$HOME/miniconda3/bin/conda
-if command -v $conda_path &> /dev/null; then
-  eval "$($conda_path shell.zsh hook)"
-fi
-
 # fzf
 if command -v fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
-
 # zoxide
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
-fi
-
-# pyenv
-if command -v pyenv &> /dev/null; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
 fi
 
