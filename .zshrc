@@ -63,23 +63,24 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Env variables and aliases
+# Env variables
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+# Aliases
 alias grep="grep --color=auto"
-
+# nvim
 if command -v nvim &> /dev/null; then
   alias vim=nvim
 fi
-
+# bat
 if command -v bat &> /dev/null; then
   alias cat=bat
 fi
-
+# exa
 if command -v exa &> /dev/null; then
   alias ls=exa
 fi
