@@ -84,10 +84,18 @@ if command -v exa &> /dev/null; then
   alias ls=exa
 fi
 
+
+# Shell hooks
+
 # Conda
 conda_path=$HOME/miniconda3/bin/conda
 if command -v $conda_path &> /dev/null; then
   eval "$($conda_path shell.zsh hook)"
+fi
+
+# fzf
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
 fi
 
 # zoxide
