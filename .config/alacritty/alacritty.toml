@@ -1,0 +1,26 @@
+import = [
+  # uncomment the flavour you want below:
+  #"~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[window]
+
+opacity = 1.0
+padding.x = 0
+padding.y = 0
+
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+dimensions.columns = 80
+dimensions.lines = 30
+
+[font]
+
+normal.family = "MesloLGS NF"
+bold.family = "MesloLGS NF"
+italic.family = "MesloLGS NF"
+bold_italic.family = "MesloLGS NF"
+
+size = 12.0
