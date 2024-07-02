@@ -83,9 +83,9 @@ fi
 if command -v bat &> /dev/null; then
   alias cat=bat
 fi
-# exa
-if command -v exa &> /dev/null; then
-  alias ls=exa
+# eza
+if command -v eza &> /dev/null; then
+  alias ls=eza
 fi
 
 
