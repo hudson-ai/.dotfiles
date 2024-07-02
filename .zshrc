@@ -63,6 +63,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# Make interactive comments comments again...
+setopt interactive_comments
+
 # Env variables
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export PATH="$HOME/.cargo/bin:$PATH"
