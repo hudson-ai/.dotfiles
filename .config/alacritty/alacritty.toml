@@ -1,8 +1,3 @@
-import = [
-  # uncomment the flavour you want below:
-  #"~/.config/alacritty/catppuccin-frappe.toml"
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
 
 [window]
 
@@ -24,3 +19,10 @@ italic.family = "MesloLGS NF"
 bold_italic.family = "MesloLGS NF"
 
 size = 14.0
+
+[general]
+import = [
+  # uncomment the flavour you want below:
+  #"~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
