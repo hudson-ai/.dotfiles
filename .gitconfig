@@ -6,6 +6,7 @@
 	defaultBranch = master
 [core]
 	editor = vim
+	excludesFile = /Users/hudsoncooper/.gitignore_global
 [pull]
 	rebase = true
 [alias]
