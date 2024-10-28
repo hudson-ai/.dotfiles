@@ -74,7 +74,7 @@ export PATH="$HOME/.local/bin/:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # Aliases
-alias grep="grep --color=auto"
+alias grep="grep -In --color=auto"
 # nvim
 if command -v nvim &> /dev/null; then
   alias vim=nvim
