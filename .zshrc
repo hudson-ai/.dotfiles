@@ -108,3 +108,13 @@ if command -v "pyenv virtualenv" &> /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+
+activate() {
+    if [[ -f "$(pwd)/.venv/bin/activate" ]]; then
+        source "$(pwd)/.venv/bin/activate"
+    else
+        echo "No virtual environment found in the current directory."
+    fi
+}
+
+source <(cat $HOME/.env)
