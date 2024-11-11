@@ -11,3 +11,5 @@
 	rebase = true
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[rerere]
+	enabled = true
