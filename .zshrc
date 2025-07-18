@@ -37,6 +37,7 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Load completions
+fpath=(~/.zsh/completions $fpath)
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
@@ -108,3 +109,5 @@ activate() {
 }
 
 source <(cat $HOME/.env)
+
+. "$HOME/.local/bin/env"
